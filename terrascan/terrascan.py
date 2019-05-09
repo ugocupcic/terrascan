@@ -96,5 +96,5 @@ def main(args=None):
     try:
         args.func(args)
     except Exception as e:
-        print("ERROR: The specified location doesn't exists" + str(e))
+        print("ERROR: The specified location doesn't exists " + str(e))
         sys.exit(1)

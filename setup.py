@@ -14,6 +14,7 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     'terraform-validate==2.5.0',
+    'xmlrunner==1.7.7'
 ]
 
 setup(
