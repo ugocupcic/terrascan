@@ -95,6 +95,6 @@ def main(args=None):
     args = parser.parse_args(args)
     try:
         args.func(args)
-    except Exception:
-        print("ERROR: The specified location doesn't exists")
+    except Exception as e:
+        print("ERROR: The specified location doesn't exists" + str(e))
         sys.exit(1)
