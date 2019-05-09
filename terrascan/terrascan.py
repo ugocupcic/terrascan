@@ -46,7 +46,14 @@ def run_test(args):
         print('\n\nRunning {} Tests'.format(test_type))
         test = test_to_class[test_type]
         test.TERRAFORM_LOCATION = location
-        runner = unittest.TextTestRunner()
+
+        GENERATE_XML = True
+        runner = None
+        if GENERATE_XML:
+            import xmlrunner
+            runner = xmlrunner.XMLTestRunner(output='test-reports')
+        else:
+            runner = unittest.TextTestRunner()
         itersuite = unittest.TestLoader().loadTestsFromTestCase(test)
         result = runner.run(itersuite)
         exit_status = exit_status and not result.wasSuccessful()
